@@ -7,6 +7,7 @@ License:       GPLv2+
 Group:         Development/C++
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 Source0:       %name-%version-beta1.tar.bz2
+Patch0:        libmsn-4.0-fix-lib-install.patch
 BuildRequires: kde4-macros
 BuildRequires: curl-devel
 
@@ -48,7 +49,7 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q -n libmsn-4.0-beta1
-
+%patch0 -p0
 %build
 %cmake_kde4
 %make
