@@ -1,13 +1,12 @@
 Name:          libmsn
 Summary:       Reusable, open-source and fully documented library for MSN
-Version:       3.2
-Release:       %mkrel 1
+Version:       4.0
+Release:       %mkrel 0.beta1.1
 Url:           http://sourceforge.net/projects/libmsn
 License:       GPLv2+
 Group:         Development/C++
 BuildRoot:     %{_tmppath}/%{name}-%{version}-build
-Source0:       %{name}-%{version}.tar.gz
-Patch0:        libmsn-3.2-fix-build.patch
+Source0:       %name-%version-beta1.tar.bz2
 BuildRequires: kde4-macros
 BuildRequires: curl-devel
 
@@ -42,24 +41,20 @@ Files needed to build applications based on %{name}.
 
 %files devel
 %defattr(-,root,root)
-%_kde_bindir/msntest
 %_kde_includedir/msn
-%exclude %_kde_libdir/libmsn.a
-%exclude %_kde_libdir/libmsn.la
 %_kde_libdir/libmsn.so
 
 #---------------------------------------------
 
 %prep
-%setup -q 
-%patch0 -p1
+%setup -q -n libmsn-4.0-beta1
 
 %build
-%define _disable_ld_no_undefined 1
-%configure2_5x
+%cmake_kde4
 %make
 
 %install
+cd build
 make DESTDIR=%buildroot install
 
 %clean
