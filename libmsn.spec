@@ -1,4 +1,4 @@
-%define beta beta3
+%define beta beta4
 
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
@@ -8,10 +8,9 @@ Url: http://sourceforge.net/projects/libmsn
 License: GPLv2+
 Group: Development/C++
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
-Source0: %name-%version-%{beta}.tar.bz2
-Patch0: libmsn-svn-before-beta4.patch
+Source0: http://downloads.sourceforge.net/libmsn/%name-%version-%{beta}.tar.bz2
 BuildRequires: cmake
-BuildRequires: curl-devel
+BuildRequires: openssl-devel
 BuildRequires: pkgconfig
 
 %description
@@ -67,7 +66,6 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q -n libmsn-4.0-%{beta}
-%patch0 -p1 -b .svn
 
 %build
 %cmake
