@@ -1,4 +1,4 @@
-%define beta beta6
+%define beta beta7
 
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
