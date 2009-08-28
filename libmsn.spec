@@ -1,4 +1,4 @@
-%define beta beta7
+%define beta beta8
 
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
@@ -68,8 +68,10 @@ Files needed to build applications based on %{name}.
 %setup -q -n libmsn-4.0-%{beta}
 
 %build
-%cmake
-%make
+%cmake \
+	-DLIBMSN_INBOX_URL_ENABLED=ON
+
+%make VERBOSE=1
 
 %install
 %makeinstall_std -C build
