@@ -1,7 +1,7 @@
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
 Version: 4.0
-Release: %mkrel 1
+Release: %mkrel 2
 Url: http://sourceforge.net/projects/libmsn
 License: GPLv2+
 Group: Development/C++
@@ -17,12 +17,14 @@ connecting to Microsoft's MSN Messenger service.
 
 #-----------------------------------------------------------------------------
 
-%define msn_major 0
+%define msn_major 0.2
 %define libmsn %mklibname msn %{msn_major}
 
 %package -n %libmsn
 Summary: %name library
 Group: System/Libraries
+# Fix temporary cooker update issue
+Obsoletes: %{_lib}msn0 > 4.0
 
 %description -n %libmsn
 %name library
