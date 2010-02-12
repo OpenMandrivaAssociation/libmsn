@@ -1,7 +1,7 @@
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
-Version: 4.0
-Release: %mkrel 2
+Version: 4.1
+Release: %mkrel 1
 Url: http://sourceforge.net/projects/libmsn
 License: GPLv2+
 Group: Development/C++
@@ -17,7 +17,7 @@ connecting to Microsoft's MSN Messenger service.
 
 #-----------------------------------------------------------------------------
 
-%define msn_major 0.2
+%define msn_major 0.3
 %define libmsn %mklibname msn %{msn_major}
 
 %package -n %libmsn
@@ -69,12 +69,10 @@ Files needed to build applications based on %{name}.
 
 %build
 %cmake 
-# Not now
-#-DLIBMSN_INBOX_URL_ENABLED=ON
-
 %make
 
 %install
+rm -fr %buildroot
 %makeinstall_std -C build
 
 %clean
