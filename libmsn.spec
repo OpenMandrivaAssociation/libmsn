@@ -7,6 +7,7 @@ License: GPLv2+
 Group: Development/C++
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 Source0: http://downloads.sourceforge.net/libmsn/%name-%version.tar.bz2
+Patch0: libmsn-4.1-openssl.patch
 BuildRequires: cmake
 BuildRequires: openssl-devel
 BuildRequires: pkgconfig
@@ -66,6 +67,7 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %cmake 
