@@ -1,14 +1,12 @@
 Name: libmsn
 Summary: Reusable, open-source and fully documented library for MSN
-Version: 4.1
-Release: %mkrel 7
+Version: 4.2.1
+Release: 1
 Url: http://sourceforge.net/projects/libmsn
 License: GPLv2+
 Group: Development/C++
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 Source0: http://downloads.sourceforge.net/libmsn/%name-%version.tar.bz2
-Patch0: libmsn-4.1-openssl.patch
-Patch1:	libmsn-4.1-fix_msn_soap_redirects.patch
 BuildRequires: cmake
 BuildRequires: openssl-devel
 BuildRequires: pkgconfig
@@ -68,8 +66,6 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %cmake 
