@@ -5,7 +5,7 @@
 Summary:	Reusable, open-source and fully documented library for MSN
 Name:		libmsn
 Version:	4.2.1
-Release:	9
+Release:	10
 License:	GPLv2+
 Group:		Development/C++
 Url:		http://sourceforge.net/projects/libmsn
