@@ -1,0 +1,5 @@
+libmsn has been removed without replacement because
+the servers it was talking to have been shut down.
+
+The library is therefore useless -- anything using
+it should be rebuilt without support for MSN.
